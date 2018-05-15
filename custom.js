@@ -8,5 +8,8 @@ function getRandomColor(){ //from stack overflow, doesnt change saturation, hue,
 }
 
 function setRandomColor() { //grabs the box and sets the background color of it to random
-    document.getElementById("colorpad").style.backgroundColor= getRandomColor()
+    var divs = document.getElementsByClassName('one')
+    for(var i=0; i<divs.length;i++){
+        divs[i].style.backgroundColor= getRandomColor()
+    }
   }
