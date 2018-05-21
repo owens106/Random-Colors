@@ -7,15 +7,20 @@ function getRandomColor(){ //from stack overflow, doesnt change saturation, hue,
     }
     return color;    
 }
-
+var time
 function setRandomColor() { //grabs the box and sets the background color of it to random
    // var divs = document.getElementsByClassName('one')
     for(var i=0; i<divs.length;i++){
         divs[i].style.backgroundColor= getRandomColor()
+        console.log(i)
     }
+  }
+  function repeat(){
+       time = setInterval(setRandomColor,750)
   }
 
   function resetColor(){//changes box color to black
+    window.clearInterval(time)
     for(var i=0; i<divs.length;i++){
         divs[i].style.backgroundColor= '#000000'
     }
