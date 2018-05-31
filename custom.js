@@ -1,4 +1,7 @@
-var divs = document.getElementsByClassName('one')
+var divs = document.getElementsByTagName('div')
+var smile=document.getElementsByName('smile')
+var colorBtn=document.getElementById('color')
+var resetBtn=document.getElementById('reset')
 function getRandomColor(){ //from stack overflow, doesnt change saturation, hue, or brightness
     var letters = '0123456789ABCDEF';
     var color = '#';
@@ -12,14 +15,28 @@ function setRandomColor() { //grabs the box and sets the background color of it 
    // var divs = document.getElementsByClassName('one')
     for(var i=0; i<divs.length;i++){
         divs[i].style.backgroundColor= getRandomColor()
-        console.log(i)
     }
   }
   function repeat(){
-       time = setInterval(setRandomColor,750)
+        colorBtn.disabled=true
+        setRandomColor()
+
+        console.log(time)
+        
+       
+        time = setInterval(setRandomColor,1500)
+       
   }
+  function smiley(){
+    resetColor()
+    for(var i=0; i<smile.length;i++){
+      smile[i].style.backgroundColor= 'yellow'
+    }
+  }
+  
 
   function resetColor(){//changes box color to black
+    colorBtn.disabled=false
     window.clearInterval(time)
     for(var i=0; i<divs.length;i++){
         divs[i].style.backgroundColor= '#000000'
