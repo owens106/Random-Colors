@@ -1,2 +1,2 @@
 # Random-Colors
-Right now its just a box and a button, the box changes to a randomly generated color when the button is pushed
+Random project, A bunch of boxes, the buttons interact differently with the colors of the boxes. 
